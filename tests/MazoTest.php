@@ -21,9 +21,9 @@ class MazoTest extends TestCase {
 
 	public function testIguales() {
         $mazo = new Mazo;
-		//$mazo2 = $mazo;
-		//$mazo2->mezclar();
-      //  $this->assertFalse($mazo->iguales($mazo2));
+		$mazo2 = $mazo;
+		$mazo2->mezclar();
+		$this->assertFalse($mazo->iguales($mazo2));
     }
 
 	public function testCantidadCartas(){
@@ -43,7 +43,8 @@ class MazoTest extends TestCase {
 
 	public function testAgregar(){
 		$mazo = new Mazo;
-		$carta = new Carta;
+		$carta = new Carta(6, "Corazones");
 		$this->assertTrue($mazo->agregar($carta));
 	}
+
 }
