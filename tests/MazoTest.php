@@ -27,8 +27,14 @@ class MazoTest extends TestCase {
     }
 
 	public function testCantidadCartas(){
-		$mazo = new Mazo;
-		$this->assertEquals($mazo->cantidadCartas(),40);
+		$mazo1 = new Mazo;
+		$mazo2 = new Mazo("Poker");
+		$mazo3 = new Mazo("Españolas");
+		$carta = new Carta(6, "Corazones");
+		$mazo1->agregar($carta);
+		$this->assertEquals($mazo1->cantidadCartas(),1);
+		$this->assertEquals($mazo2->cantidadCartas(),52);
+		$this->assertEquals($mazo3->cantidadCartas(),50);
 	}
 
 	public function testCarta(){
@@ -37,7 +43,10 @@ class MazoTest extends TestCase {
 	}
 
 	public function testNoVacio(){
-		$mazo = new Mazo;
+		$mazo = new Mazo();
+		$this->assertFalse($mazo->noVacio());
+		$carta = new Carta("9", "Treboles");
+		$mazo->agregar($carta);
 		$this->assertTrue($mazo->noVacio());
 	}
 
