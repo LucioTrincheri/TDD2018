@@ -3,7 +3,6 @@
 namespace TDD;
 
 class Mazo {
-
 	protected mazo;
 	protected cantidad;
 	protected tipo;
