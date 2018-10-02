@@ -8,7 +8,7 @@ class CartaTest extends TestCase {
 
 	public function testPalo(){
 		$carta = new Carta(9, "Treboles");
-		$this->assertTrue($carta->isPalo());
+		$this->assertEquals($carta->palo(), "Treboles");
 	}
 
 

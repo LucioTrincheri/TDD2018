@@ -37,9 +37,17 @@ class MazoTest extends TestCase {
 		$this->assertEquals($mazo3->cantidadCartas(),50);
 	}
 
+	public function testCortar(){
+		$mazo = new Mazo("Poker");
+		$carta = $mazo->obtenerCarta(1);
+		$mazo->cortar();
+		$this->assertNotEquals($carta, $mazo->obtenerCarta(1));
+	}
+
 	public function testCarta(){
 		$mazo = new Mazo("Poker");
 		$this->assertTrue(($mazo->obtenerCarta(4)) instanceof Carta);
+		$this->assertFalse($mazo->obtenerCarta(-1));
 	}
 
 	public function testNoVacio(){
