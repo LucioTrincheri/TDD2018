@@ -38,8 +38,8 @@ class MazoTest extends TestCase {
 	}
 
 	public function testCarta(){
-		$mazo = new Mazo();
-		$this->assertTrue(($mazo->obtenerCarta()) instanceof Carta);
+		$mazo = new Mazo("Poker");
+		$this->assertTrue(($mazo->obtenerCarta(4)) instanceof Carta);
 	}
 
 	public function testNoVacio(){
