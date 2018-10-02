@@ -22,9 +22,9 @@ class Carta {
 		return $this->palo;	
 	}
 
-	public function isPalo(){
+/*	public function isPalo(){
 		return ($this->tipo == "Poker" || $this->tipo == "Españolas");
-	}
+	}*/
 
 	
 
