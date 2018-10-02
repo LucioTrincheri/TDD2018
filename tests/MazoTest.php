@@ -45,14 +45,14 @@ class MazoTest extends TestCase {
 	public function testNoVacio(){
 		$mazo = new Mazo();
 		$this->assertFalse($mazo->noVacio());
-		$carta = new Carta("9", "Treboles");
+		$carta = new Carta(9, "Treboles");
 		$mazo->agregar($carta);
 		$this->assertTrue($mazo->noVacio());
 	}
 
 	public function testAgregar(){
 		$mazo = new Mazo();
-		$carta = new Carta(6, "Corazones");
+		$carta = new Carta(6 , "Corazones");
 		$this->assertTrue($mazo->agregar($carta));
 	}
 
