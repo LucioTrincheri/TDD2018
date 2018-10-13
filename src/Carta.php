@@ -8,17 +8,17 @@ class Carta {
 	protected $palo;
 	protected $tipo;
 
-	public function __construct($numero=NULL, $palo=NULL){
+	public function __construct($numero = NULL, $palo = NULL) {
 		$this->numero = $numero;
 		$this->palo = $palo;
-		if($palo == "Treboles" || $palo == "Diamantes" || $palo == "Picas" || $palo == "Corazones"){
+		if ($palo == "Treboles" || $palo == "Diamantes" || $palo == "Picas" || $palo == "Corazones") {
 			$this->tipo = "Poker";
-		}else{
+		}else {
 			$this->tipo = "Españolas";
 		}
 	}
 
-	public function palo(){
+	public function palo() {
 		return $this->palo;	
 	}
 
@@ -28,11 +28,11 @@ class Carta {
 
 	
 
-	public function numero(){
+	public function numero() {
 		return $this->numero;
 	}
 
-	public function tipo(){
+	public function tipo() {
 		return $this->tipo;
 	}
 }
