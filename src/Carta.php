@@ -13,7 +13,7 @@ class Carta {
 		$this->palo = $palo;
 		if ($palo == "Treboles" || $palo == "Diamantes" || $palo == "Picas" || $palo == "Corazones") {
 			$this->tipo = "Poker";
-		}else {
+		} else {
 			$this->tipo = "Españolas";
 		}
 	}
