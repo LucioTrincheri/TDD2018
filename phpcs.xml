@@ -3,5 +3,4 @@
 	<description>Code Standard</description>
 	<file>./</file>
 	<exclude-pattern>./vendor/*</exclude-pattern>
-	<rule ref="WordPress">
 </ruleset>
