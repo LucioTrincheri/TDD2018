@@ -3,27 +3,29 @@
 namespace TDD;
 
 class Mazo {
-	
+
 	protected $mazo = [];
 	protected $cantidad;
 	protected $tipo;
 	protected $ultimaCarta;
 
-	 
-	public function __construct($tipo = NULL) {
+
+	public function __construct($tipo = null)
+	{
 		$this->tipo = $tipo;
 		if ($tipo == "Poker") {
-					$this->cantidad = 52;
+			$this->cantidad = 52;
 		}
 
 		if ($tipo == "Españolas") {
-					$this->cantidad = 50;
+			$this->cantidad = 50;
 		}
 
 		$this->crear();
 	}
 
-	public function crear() {
+	public function crear()
+	{
 		if ($this->tipo == "Poker") {
 			$this->mazo = [new Carta("As", "Corazones"), new Carta(2, "Corazones"), new Carta(3, "Corazones"), new Carta(4, "Corazones"), new Carta(5, "Corazones"), new Carta(6, "Corazones"), new Carta(7, "Corazones"), new Carta(8, "Corazones"), new Carta(9, "Corazones"), new Carta("J", "Corazones"), new Carta("Q", "Corazones"), new Carta("K", "Corazones"), new Carta("As", "Picas"), new Carta(2, "Picas"), new Carta(3, "Picas"), new Carta(4, "Picas"), new Carta(5, "Picas"), new Carta(6, "Picas"), new Carta(7, "Picas"), new Carta(8, "Picas"), new Carta(9, "Picas"), new Carta("J", "Picas"), new Carta("Q", "Picas"), new Carta("K", "Picas"), new Carta("As", "Treboles"), new Carta(2, "Treboles"), new Carta(3, "Treboles"), new Carta(4, "Treboles"), new Carta(5, "Treboles"), new Carta(6, "Treboles"), new Carta(7, "Treboles"), new Carta(8, "Treboles"), new Carta(9, "Treboles"), new Carta("J", "Treboles"), new Carta("Q", "Treboles"), new Carta("K", "Treboles"), new Carta("As", "Diamantes"), new Carta(2, "Diamantes"), new Carta(3, "Diamantes"), new Carta(4, "Diamantes"), new Carta(5, "Diamantes"), new Carta(6, "Diamantes"), new Carta(7, "Diamantes"), new Carta(8, "Diamantes"), new Carta(9, "Diamantes"), new Carta("J", "Diamantes"), new Carta("Q", "Diamantes"), new Carta("K", "Diamantes")];
 		}
@@ -33,39 +35,46 @@ class Mazo {
 		}
 	}
 
-	public function mezclar() {
+	public function mezclar()
+	{
 		return shuffle($this->mazo);
 	}
 
-	public function cortar() {
+	public function cortar()
+	{
 		$offset = rand(1, $this->cantidad - 1);
 		$this->mazo = array_merge(array_slice($this->mazo, $offset), array_slice($this->mazo, 0, $offset));
-		return True;
+		return true;
 	}
 
-	public function iguales($mazo2) {
+	public function iguales($mazo2)
+	{
 		return ($this->mazo === $mazo2);
 	}
 
-	public function cantidadCartas() {
+	public function cantidadCartas()
+	{
 		return $this->cantidad;
 	}
 
-	public function obtenerCarta($valor) {
+	public function obtenerCarta($valor)
+	{
 		if ($valor > 0 && $valor <= $this->cantidad) {
-					return $this->mazo[ $valor - 1 ];
+			return $this->mazo[ $valor - 1 ];
 		}
-		
-		return False;
+
+		return false;
 	}
 
-	public function noVacio() {
+	public function noVacio()
+	{
 		return (count($this->mazo) != 0);
 	}
 
-	public function agregar($carta) {
+	public function agregar($carta)
+	{
 		array_push($this->mazo, $carta);
 		$this->cantidad += 1;
-		return True;
+		return true;
 	}
 }
