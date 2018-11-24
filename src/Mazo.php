@@ -5,7 +5,8 @@ namespace TDD;
 /**
   * @desc clase mazo, contiene todas la cartas, y permite realizar acciones con ellas
 */
-class Mazo {
+class Mazo
+{
 
 	protected $mazo = [];
 	protected $cantidad;
@@ -76,7 +77,7 @@ class Mazo {
 	*/
 	public function iguales($mazo2)
 	{
-		return ($this->mazo === $mazo2);
+        return ($this->mazo === $mazo2);
 	}
 
 	/**
